@@ -51,8 +51,7 @@ Exercício_1 (pontos mais relevantes)
    3º Adicionar o diagrama de classes UML ao ficheiro README;
    
     
-  
-    ![diagramaUML](https://user-images.githubusercontent.com/96847584/155164059-ba499852-cccc-4083-9ad8-bf200d9137fa.png)
+  ![diagramaUML](https://user-images.githubusercontent.com/96847584/155164059-ba499852-cccc-4083-9ad8-bf200d9137fa.png)
 
     
     
