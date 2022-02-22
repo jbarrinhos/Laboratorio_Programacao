@@ -89,10 +89,6 @@ public class Operacoes {
 		System.out.println("Digite um número: ");
 		int userInput = sc.nextInt();
 
-		if (userInput == 0) {
-			System.out.println(1);
-		}
-
 		int factorial = userInput;
 
 		for (int i = userInput - 1; i > 0; i--) {
@@ -100,6 +96,11 @@ public class Operacoes {
 			System.out.println(factorial);
 
 		}
+		if (userInput == 0) {
+			System.out.println(1);
+
+		}
+
 		return factorial;
 
 	}
