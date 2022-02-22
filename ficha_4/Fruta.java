@@ -3,12 +3,31 @@ package ficha_4;
 public abstract class Fruta {
 
 	protected String nome;
-	protected double preco;
+	protected double precoBase;
 
-	public double pagar() {
+	public Fruta(String aNome, double aPrecoBase) {
+		nome = aNome;
+		precoBase = aPrecoBase;
+	}
 
-		return preco;
+	public abstract double pagar();
 
+	// Getters e Setters
+
+	public String getNome() {
+		return nome;
+	}
+
+	public double getPrecoBase() {
+		return precoBase;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public void setPrecoBase(double aPrecoBase) {
+		this.precoBase = aPrecoBase;
 	}
 
 }
