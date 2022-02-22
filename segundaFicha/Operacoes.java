@@ -13,14 +13,14 @@ public class Operacoes {
 //		printAreaTriangulo();
 //		printAreaRetangulo();
 //		printCalcArea();
-//		calcularFactorial();
+		calcularFactorial();
 //		System.out.print(factorialRecursivo(6));
 //		totalVogais();
 //		anual(3601);
 //		anual(8551);
-		numeroVogais("Eu sou uma arvore");
-		numeroVogais("Eu sou uma árvore");
-		numeroVogais("Eu sou uma Arvore");
+//		numeroVogais("Eu sou uma arvore");
+//		numeroVogais("Eu sou uma árvore");
+//		numeroVogais("Eu sou uma Arvore");
 	}
 
 //	exercício 1_Crie uma função chamada areaTriang que recebe dois argumentos (altura e base) e
@@ -86,15 +86,22 @@ public class Operacoes {
 	private static int calcularFactorial() {
 		Scanner sc = new Scanner(System.in);
 
+		System.out.println("Digite um número: ");
 		int userInput = sc.nextInt();
+
+		if (userInput == 0) {
+			System.out.println(1);
+		}
 
 		int factorial = userInput;
 
 		for (int i = userInput - 1; i > 0; i--) {
 			factorial *= i; // factorial=factorial*i
 			System.out.println(factorial);
+
 		}
 		return factorial;
+
 	}
 
 //	exercicio 5_Crie uma função chamada factorRecursivo que recebe um argumento (n) e
