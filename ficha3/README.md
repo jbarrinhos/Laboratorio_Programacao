@@ -10,7 +10,7 @@ Exercício_1 (pontos mais relevantes)
    4º Criar um método depositar() que recebe o valor a depositar e atualiza o saldo (relembrar que inicializou a zero);
    5º Criar um método levantar() que permite levantar dinheiro da conta, atualiza a conta e não permite o levantamento que coloquem o saldo negativo;
    
-    
+    Na main: criar contas, efetuar depósitos e levantamentos, imprimir a informação que atualiza o saldo.
     
     
  Exercício_2 (pontos mais relevantes)
@@ -51,7 +51,9 @@ Exercício_1 (pontos mais relevantes)
    3º Adicionar o diagrama de classes UML ao ficheiro README;
    
     
-  ![diagramaUML](https://user-images.githubusercontent.com/96847584/155164059-ba499852-cccc-4083-9ad8-bf200d9137fa.png)
+ ![DiagramaUML](https://user-images.githubusercontent.com/96847584/155165848-9a38f0c2-4167-4acf-9880-422fddfcfddb.png)
+
+ 
 
     
     
