@@ -12,6 +12,12 @@ public abstract class Fruta {
 
 	public abstract double pagar();
 
+	@Override
+	public String toString() {
+
+		return nome;
+	}
+
 	// Getters e Setters
 
 	public String getNome() {
