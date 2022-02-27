@@ -1,4 +1,4 @@
-package ficha3;
+package ficha3Laboratorio;
 
 public class Casa {
 

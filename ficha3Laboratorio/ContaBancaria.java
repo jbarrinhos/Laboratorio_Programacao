@@ -1,4 +1,4 @@
-package ficha3;
+package ficha3Laboratorio;
 
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;

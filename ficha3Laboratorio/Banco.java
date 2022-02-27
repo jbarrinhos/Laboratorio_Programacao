@@ -1,4 +1,4 @@
-package ficha3;
+package ficha3Laboratorio;
 
 import java.util.ArrayList;
 import java.util.List;

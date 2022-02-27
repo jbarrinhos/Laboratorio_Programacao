@@ -1,4 +1,4 @@
-package ficha_4;
+package ficha4Laboratorio;
 
 public class FrutaPeso extends Fruta implements Descontável {
 
