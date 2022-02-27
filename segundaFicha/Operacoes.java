@@ -10,10 +10,10 @@ public class Operacoes {
 
 		// aqui chamo as funções criadas em baixo no "static void"
 
-//		printAreaTriangulo();
-//		printAreaRetangulo();
-//		printCalcArea();
-		calcularFactorial();
+//		areaTriangulo();
+//		areaRetangulo();
+		calcArea(2, 4, 2);
+//		calcularFactorial();
 //		System.out.print(factorialRecursivo(6));
 //		totalVogais();
 //		anual(3601);
@@ -30,18 +30,6 @@ public class Operacoes {
 		return (base * altura) / 2;
 	}
 
-	static void printAreaTriangulo() {
-
-		System.out.println("Digite o valor da base do Triângulo");
-		double base = pedir.nextDouble();
-
-		System.out.println("Digite o valor da altura do Triângulo");
-		double altura = pedir.nextDouble();
-
-		System.out.println("A área do Triângulo é: " + areaTriangulo(base, altura));
-
-	}
-
 //  exercício 2_Crie uma função chamada areaRetang que recebe dois argumentos (altura e comprimento) e 
 //	retorna a área do retângulo.
 //	
@@ -49,33 +37,19 @@ public class Operacoes {
 	public static double areaRetangulo(double base, double altura) {
 		return (base * altura);
 	}
-
-	static void printAreaRetangulo() {
-
-		System.out.println("Digite o valor do comprimento do retângulo");
-		double base = pedir.nextDouble();
-
-		System.out.println("Digite o valor da altura do retângulo");
-		double altura = pedir.nextDouble();
-
-		System.out.println("A área do Retângulo é: " + areaRetangulo(base, altura));
-	}
-
+//
+//	
 //	exercício 3_Crie uma função chamada areaCal que recebe três argumentos (x, y, z) e 
 //	retorna a área do triangulo caso z = 1 e retorna a área do retângulo caso contrário.
 
-	static void printCalcArea() {
-		System.out.println("Digite três valores para X,Y,Z ");
-		double X = pedir.nextDouble();
-		double Y = pedir.nextDouble();
-		double Z = pedir.nextDouble();
+	static void calcArea(double x, double y, double z) {
 
-		if (Z == 1) {
-			System.out.print("Área do Triângulo é: " + areaTriangulo(X, Y));
+		if (z == 1) {
+			System.out.print("Área do Triângulo é: " + areaTriangulo(x, y));
 		}
 
 		else {
-			System.out.println("Área do Retângulo é: " + areaRetangulo(X, Y));
+			System.out.println("Área do Retângulo é: " + areaRetangulo(x, y));
 		}
 
 	}
