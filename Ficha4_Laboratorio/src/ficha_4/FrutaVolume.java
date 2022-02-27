@@ -13,7 +13,7 @@ public class FrutaVolume extends Fruta implements Descontável {
 
 	public double pagar() {
 
-		return (precoBase * volume);
+		return (volume * getPrecoBase() - descontar(percentagem));
 	}
 
 	public float getVolume() {
@@ -26,9 +26,8 @@ public class FrutaVolume extends Fruta implements Descontável {
 
 	@Override
 	public double descontar(double percentagem) {
-		// testado na main com numero inteiro (25)
 
-		return (precoBase * (percentagem / 100));
+		return (volume * getPrecoBase() * percentagem);
 	}
 
 	public void setDescontar(double aPercentagem) {

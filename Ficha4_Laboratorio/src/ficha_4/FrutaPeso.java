@@ -13,7 +13,7 @@ public class FrutaPeso extends Fruta implements Descontável {
 	@Override
 	public double pagar() {
 		// TODO Auto-generated method stub
-		return (precoBase * peso);
+		return (peso * getPrecoBase() - descontar(percentagem));
 	}
 
 	public float getPeso() {
@@ -29,7 +29,7 @@ public class FrutaPeso extends Fruta implements Descontável {
 	public double descontar(double percentagem) {
 
 		// testado na main com número decimal (0.2d)
-		return (precoBase * percentagem);
+		return (peso * getPrecoBase() * percentagem);
 
 	}
 

@@ -45,6 +45,12 @@ public class Testar {
 
 		cestoFruta.numeroFruta("maracujá");
 
+		// quantidade total do tipo de FrutaUnidade
+
+		System.out.println("Quantidade total de frutas no cesto " + cestoFruta.numeroFruta("FrutaUnidade"));
+		System.out.println("Valor total gasto por derteminado tipo de fruta "
+				+ formatarValor.format(cestoFruta.totalGasto("FrutaPeso")));
+
 		// testar unicamento o desconto
 		System.out.println("\nvalor com desconto sem peso: " + formatarValor.format(laranja.descontar(0.7)) + "€");
 		System.out.println("valor com desconto sem volume: " + formatarValor.format(anona.descontar(0.15)) + "€");
@@ -52,7 +58,7 @@ public class Testar {
 		// testar com peso/volume
 
 		laranja.setDescontar(0.2d);
-		anona.setDescontar(15);
+		anona.setDescontar(0.15);
 
 		System.out.println("\nvalor com desconto e peso: " + formatarValor.format(laranja.pagar()) + "€");
 		System.out.println("valor com desconto e volume: " + formatarValor.format(anona.pagar()) + "€");

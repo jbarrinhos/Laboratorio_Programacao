@@ -41,30 +41,31 @@ public class Cesto {
 		return valorTotal;
 	}
 
-	/// ver isto em casa (na String fica o nome da classe, ver como funciona a
 	/// comparação entre classes
 
 	public int numeroFruta(String tipoFruta) {
+		int numero = 0;
 
 		for (Fruta fruta : frutas) {
-
-			if (fruta.getNome().equals(tipoFruta)) {
-
-				if (fruta instanceof FrutaUnidade) {
-
-					System.out.println("Tem " + ((FrutaUnidade) fruta).getUnidade() + " unidades");
-				}
-
-				else if (fruta instanceof FrutaPeso) {
-					System.out.println("Tem " + ((FrutaPeso) fruta).getPeso() + " Kgs");
-				}
-
-				else if (fruta instanceof FrutaVolume) {
-					System.out.println("Tem" + ((FrutaVolume) fruta).getVolume() + " volume");
-				}
+			if (fruta.getClass().getSimpleName().equals(tipoFruta)) {
+				numero += 1;
 			}
 		}
-		return 0;
+		return numero;
+	}
+
+	public double totalGasto(String tipoFruta) {
+		double valorGasto = 0;
+
+		for (Fruta fruta : frutas) {
+			if (fruta.getClass().getSimpleName().equals(tipoFruta)) {
+
+				valorGasto += fruta.pagar();
+			}
+
+		}
+
+		return valorGasto;
 	}
 
 	@Override
