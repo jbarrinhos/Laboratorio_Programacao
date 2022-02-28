@@ -2,7 +2,6 @@ package ficha3;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class Banco {
 
@@ -29,9 +28,12 @@ public class Banco {
 
 	}
 
+//maneira correta de usar o equals !!!
+
 	public ContaBancaria getConta(String titular) {
 		for (ContaBancaria conta : contas) {
-			if (Objects.equals(conta.getTitular(), titular)) {
+
+			if (conta.getTitular().equals(titular)) {
 
 				return conta;
 			}
@@ -51,9 +53,8 @@ public class Banco {
 	public void removerCasa(String morada) {
 		for (int i = 0; i < casas.size(); i++) {
 			Casa aCasa = casas.get(i);
-			if (Objects.equals(aCasa.getMorada(), morada)) {
+			if (aCasa.getMorada().equals(morada)) {
 				casas.remove(aCasa);
-				return;
 			}
 		}
 	}
