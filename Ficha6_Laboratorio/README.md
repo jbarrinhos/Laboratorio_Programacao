@@ -16,7 +16,7 @@ Resolução 1.:
 
 
 
-2.Considerar o seguinte problema focado numa universidade.
+2. Considerando o seguinte problema focado numa universidade.
 
   Numa universidade existem salas de aula, escritórios e departamentos. Uma universidade é constituída por vários departamentos, que por sua vez é constituído por vários escritórios e várias salas de aula. Um departamento é constituído adicionalmente por vários professores, que podem ser professores catedráticos, professores associados e professores assistentes. Um professor tem associado um escritório e um escritório pode ter mais do que um professor. A universidade possuí vários cursos, e cada curso possui vários estudantes.
   
