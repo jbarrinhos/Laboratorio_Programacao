@@ -24,7 +24,8 @@ Resolução 1.:
       
 Resolução 2.:
 
+![diagrama2_ficha6](https://user-images.githubusercontent.com/96847584/157498984-e26099aa-e1ee-494a-8c2e-a7d8a2c12071.png)
 
-![diagrama2_ficha6](https://user-images.githubusercontent.com/96847584/157475991-ebbebfd7-1b2c-40b6-bbde-3d2cd83ff66b.png)
+
 
 
