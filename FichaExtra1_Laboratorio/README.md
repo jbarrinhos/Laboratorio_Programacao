@@ -5,10 +5,10 @@
 Considere que se pretende desenvolver uma aplicação para registo de navios num porto marítimo.
 Um **navio** é genericamente caracterizado pela seguinte informação:
 
-    - [x] Identificador do Navio (String)
-    - [x] nome (String)
-    - [x] ano de construção (Date)
-    - [x] comprimento (float).
+   - [x] Identificador do Navio (String)
+   - [x] nome (String)
+   - [x] ano de construção (Date)
+   - [x] comprimento (float).
 
 Um navio **porta-contentores** é um navio com atributo adicional, o **número máximo de contentores (int)**.
 Um navio **petroleiro** é um navio com atributo adicional **capacidade de carga (float)**, em toneladas.
@@ -27,4 +27,4 @@ A classe deve incluir métodos para (nota: pode adicionar métodos às classes a
 
 > Exercicio 3
 
-> Escreva as instruções necessárias, no método main(...), para criar um Porto com um navio petroleiro e um navio porta contentores (utilize qualquer valor para os parâmetros com um tipo de dados válido). Utilize o método para adicionar um novo navio. Valide que não é possível repetir a matrícula de navio, num mesmo porto.
+Escreva as instruções necessárias, no método main(...), para criar um Porto com um navio petroleiro e um navio porta contentores (utilize qualquer valor para os parâmetros com um tipo de dados válido). Utilize o método para adicionar um novo navio. Valide que não é possível repetir a matrícula de navio, num mesmo porto.
