@@ -35,8 +35,10 @@ public class CentroComercialController {
 	}
 
 // em contrução
+
+	@GetMapping("users/{id}")
 	public boolean getCComercial(@PathVariable String aId) {
-		return centroComercialService.getCentroComercial(aId);
+		return centroComercialService.getCCById(aId);
 	}
 
 	@PostMapping("/addCentroComercial")
