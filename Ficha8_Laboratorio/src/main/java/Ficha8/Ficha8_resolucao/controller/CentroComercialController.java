@@ -34,6 +34,11 @@ public class CentroComercialController {
 		return centroComercialService.getCentroComerciais();
 	}
 
+// em contrução
+	public boolean getCComercial(@PathVariable String aId) {
+		return centroComercialService.getCentroComercial(aId);
+	}
+
 	@PostMapping("/addCentroComercial")
 	public ResponseEntity<SimpleResponse> addCentroComercial(@RequestBody CentroComercial aCentroComercial) {
 		SimpleResponseCentroComercial srcc = new SimpleResponseCentroComercial();

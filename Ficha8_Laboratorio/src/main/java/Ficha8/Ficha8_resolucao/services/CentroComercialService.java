@@ -50,9 +50,29 @@ public class CentroComercialService {
 		return centrosComerciais;
 	}
 
+	public boolean getCentroComercial(String aId) {
+		try {
+			Long id_long = parseLong(aId);
+
+			Optional<CentroComercial> centroComercialOpcional = centroComercialRepository.findById(id_long);
+
+			if (aId == null || id_long == NaN || centroComercialOpcional.isEmpty()) {
+				return false;
+			}
+
+			CentroComercial centroComercial = centroComercialOpcional.get();
+			centroComercialRepository.
+
+			return true;
+		} catch (Exception e) {
+
+			return false;
+		}
+	}
+
 	public boolean deleteCentroComercialById(String aId) {
 
-		try { // pq da excepçao se meto uma letra
+		try {
 			Long id_long = parseLong(aId);
 
 			Optional<CentroComercial> centroComercialOpcional = centroComercialRepository.findById(id_long);

@@ -1,5 +1,6 @@
 package Ficha8.Ficha8_resolucao.dto;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import Ficha8.Ficha8_resolucao.model.Loja;
@@ -8,15 +9,15 @@ public class SimpleResponseLoja extends SimpleResponse {
 
 	List<Loja> lojas;
 
-	public void SimpleResponseEmpresas(List<Loja> aLojas) {
-		lojas = aLojas;
+	public SimpleResponseLoja() {
+		lojas = new ArrayList<>();
 	}
 
-	public List<Loja> getEmpresas() {
+	public List<Loja> getLoja() {
 		return lojas;
 	}
 
-	public void setEmpresas(List<Loja> aLojas) {
+	public void setLoja(List<Loja> aLojas) {
 		lojas = aLojas;
 	}
 

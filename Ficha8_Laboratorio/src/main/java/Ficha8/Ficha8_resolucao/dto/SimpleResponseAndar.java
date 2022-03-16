@@ -1,5 +1,6 @@
 package Ficha8.Ficha8_resolucao.dto;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import Ficha8.Ficha8_resolucao.model.Andar;
@@ -7,15 +8,15 @@ import Ficha8.Ficha8_resolucao.model.Andar;
 public class SimpleResponseAndar extends SimpleResponse {
 	List<Andar> andares;
 
-	public void SimpleResponseEmpresas(List<Andar> aAndares) {
-		andares = aAndares;
+	public SimpleResponseAndar() {
+		andares = new ArrayList<>();
 	}
 
-	public List<Andar> getEmpresas() {
+	public List<Andar> getAndar() {
 		return andares;
 	}
 
-	public void setEmpresas(List<Andar> aAndares) {
+	public void setAndar(List<Andar> aAndares) {
 		andares = aAndares;
 	}
 
