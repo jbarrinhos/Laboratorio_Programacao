@@ -67,29 +67,4 @@ public class CentroComercialService {
 
 	}
 
-	public boolean updateCComercial(CentroComercial aCentroComercial) {
-		Optional<CentroComercial> cCOptional = getCComercial(aCentroComercial);
-		if (cCOptional.isEmpty()) {
-			return false;
-		}
-		CentroComercial cCToUpdate = cCOptional.get();
-
-		if (aCentroComercial.getNome() != null && !aCentroComercial.getNome().isBlank()) {
-			cCToUpdate.setNome(aCentroComercial.getNome());
-		}
-
-		if (aCentroComercial.getMorada() != null && !aCentroComercial.getMorada().isBlank()) {
-			cCToUpdate.setMorada(aCentroComercial.getMorada());
-		}
-
-		centroComercialRepository.save(aCentroComercial);
-
-		return true;
-	}
-
-	public Optional<CentroComercial> getCComercial(CentroComercial aCentroComercial) {
-		return centroComercialRepository.findById(aCentroComercial.getId());
-
-	}
-
 }

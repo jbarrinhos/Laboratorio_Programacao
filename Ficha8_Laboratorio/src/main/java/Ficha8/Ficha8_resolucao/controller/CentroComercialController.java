@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -71,18 +70,6 @@ public class CentroComercialController {
 	@DeleteMapping("/deleteCentroComercial/{aId}")
 	public boolean deleteCentroComercial(@PathVariable String aId) {
 		return centroComercialService.deleteCentroComercialById(aId);
-	}
-
-	@PutMapping("/updateCComercial")
-	public ResponseEntity<SimpleResponse> updateCComercial(@RequestBody CentroComercial aCentroComercial) {
-		SimpleResponseCentroComercial srcc = new SimpleResponseCentroComercial();
-
-		if (centroComercialService.updateCComercial(aCentroComercial)) {
-			srcc.setSucesso("Sucesso ao atualizar o Centro Comercial");
-			return ResponseEntity.status(HttpStatus.OK).body(srcc);
-		}
-
-		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(srcc);
 	}
 
 }
