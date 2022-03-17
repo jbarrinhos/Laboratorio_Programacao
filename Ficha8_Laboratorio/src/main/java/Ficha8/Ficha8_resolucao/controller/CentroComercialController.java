@@ -1,6 +1,7 @@
 package Ficha8.Ficha8_resolucao.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -33,12 +34,11 @@ public class CentroComercialController {
 		return centroComercialService.getCentroComerciais();
 	}
 
-// em contrução
+	@GetMapping("/getCCById/{aId}")
+	public Optional<CentroComercial> getCCById(@PathVariable String aId) {
 
-//	@GetMapping("users/{id}")
-//	public boolean getCComercial(@PathVariable String aId) {
-//		return centroComercialService.getCCById(aId);
-//	}
+		return centroComercialService.getCentroComercial(aId);
+	}
 
 	@PostMapping("/addCentroComercial")
 	public ResponseEntity<SimpleResponse> addCentroComercial(@RequestBody CentroComercial aCentroComercial) {
@@ -51,7 +51,7 @@ public class CentroComercialController {
 			srcc.setMensagem("Morada Inválida");
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(srcc);
 		}
-		if (aCentroComercial.getNumeroMaxAndar() == 0 || aCentroComercial.getNumeroMaxAndar() == ' ') {
+		if (aCentroComercial.getNumeroMaxAndar() <= 0) {
 			srcc.setMensagem("Valor inválido");
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(srcc);
 		}

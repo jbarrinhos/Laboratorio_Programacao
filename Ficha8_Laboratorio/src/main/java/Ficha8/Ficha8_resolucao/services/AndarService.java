@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import Ficha8.Ficha8_resolucao.model.Andar;
-import Ficha8.Ficha8_resolucao.model.CentroComercial;
 import Ficha8.Ficha8_resolucao.repository.AndarRepository;
 import Ficha8.Ficha8_resolucao.repository.CentroComercialRepository;
 
@@ -55,18 +54,4 @@ public class AndarService {
 		}
 	}
 
-	public boolean addAndarToCc(Andar aAndar, CentroComercial aCentroComercial) {
-		Optional<CentroComercial> ccOptional = centroComercialRepository.findById(aCentroComercial.getId());
-
-		if (ccOptional.isEmpty() || aAndar.getNumeroAndar() == ' ' || aAndar.getNumeroMaxLojas() == ' ') {
-			return false;
-		}
-		CentroComercial ccAux = ccOptional.get();
-		ccAux.addAndar(aAndar);
-		aAndar.setCentroComercial(ccAux);
-
-		andarRepository.save(aAndar);
-
-		return true;
-	}
 }

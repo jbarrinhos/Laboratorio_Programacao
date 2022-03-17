@@ -1,5 +1,8 @@
 package Ficha8.Ficha8_resolucao.services;
 
+import static java.lang.Float.NaN;
+import static java.lang.Long.parseLong;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -36,6 +39,20 @@ public class LojaService {
 		return lojas;
 	}
 
+	public Optional<Loja> getLojaById(String aId) {
+		try {
+			Long id_long = parseLong(aId);
+			Optional<Loja> lojaOpcional = lojaRepository.findById(id_long);
+			if (aId == null || id_long == NaN || lojaOpcional.isEmpty()) {
+				return null;
+			}
+			return lojaOpcional;
+		} catch (Exception e) {
+			return null;
+		}
+
+	}
+
 	public boolean updateLoja(Loja aLoja) {
 		Optional<Loja> lojaOptional = getLojaOptional(aLoja);
 		if (lojaOptional.isEmpty()) {
@@ -61,6 +78,27 @@ public class LojaService {
 
 	public Optional<Loja> getLojaOptional(Loja aLoja) {
 		return lojaRepository.findById(aLoja.getId());
+
+	}
+
+	public boolean deleteLojaById(String aId) {
+
+		try {
+			Long id_long = parseLong(aId);
+
+			Optional<Loja> lojaOpcional = lojaRepository.findById(id_long);
+
+			if (aId == null || id_long == NaN || lojaOpcional.isEmpty()) {
+				return false;
+			}
+
+			Loja loja = lojaOpcional.get();
+			lojaRepository.delete(loja);
+
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
 
 	}
 

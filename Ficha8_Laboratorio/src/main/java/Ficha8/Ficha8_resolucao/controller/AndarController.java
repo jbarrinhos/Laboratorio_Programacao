@@ -15,16 +15,23 @@ import org.springframework.web.bind.annotation.RestController;
 import Ficha8.Ficha8_resolucao.dto.SimpleResponse;
 import Ficha8.Ficha8_resolucao.dto.SimpleResponseAndar;
 import Ficha8.Ficha8_resolucao.model.Andar;
+import Ficha8.Ficha8_resolucao.services.AndarLojaService;
 import Ficha8.Ficha8_resolucao.services.AndarService;
-import Ficha8.Ficha8_resolucao.utils.Wrapper;
+import Ficha8.Ficha8_resolucao.services.CentroComercialAndarService;
+import Ficha8.Ficha8_resolucao.utils.WrapperAndarCComercial;
 
 @RestController
 public class AndarController {
 	private final AndarService andarService;
+	private final CentroComercialAndarService centroComercialAndarService;
+	private final AndarLojaService andarLojaService;
 
 	@Autowired
-	public AndarController(AndarService aAndarService) {
+	public AndarController(AndarService aAndarService, CentroComercialAndarService aCentroComercialAndarService,
+			AndarLojaService aAndarLojaService) {
 		andarService = aAndarService;
+		centroComercialAndarService = aCentroComercialAndarService;
+		andarLojaService = aAndarLojaService;
 	}
 
 	@GetMapping("/getAndares")
@@ -37,11 +44,11 @@ public class AndarController {
 
 		SimpleResponseAndar sra = new SimpleResponseAndar();
 
-		if (aAndar.getNumeroAndar() == 0 || aAndar.getNumeroAndar() == ' ') {
+		if (aAndar.getNumeroAndar() <= 0) {
 			sra.setMensagem("Valor inválido");
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(sra);
 		}
-		if (aAndar.getNumeroMaxLojas() == 0 || aAndar.getNumeroMaxLojas() == ' ') {
+		if (aAndar.getNumeroMaxLojas() <= 0) {
 			sra.setMensagem("Valor inválido");
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(sra);
 		}
@@ -61,9 +68,9 @@ public class AndarController {
 	}
 
 	@PostMapping("/addAndarToCc")
-	public ResponseEntity<SimpleResponse> addAndarToCc(@RequestBody Wrapper aWrapper) {
+	public ResponseEntity<SimpleResponse> addAndarToCc(@RequestBody WrapperAndarCComercial aWrapper) {
 		SimpleResponseAndar sra = new SimpleResponseAndar();
-		if (andarService.addAndarToCc(aWrapper.getAndar(), aWrapper.getCentroComercial())) {
+		if (centroComercialAndarService.addAndarToCc(aWrapper.getAndar(), aWrapper.getCentroComercial())) {
 			sra.setSucesso("Andar adicionado ao Centro Comercial com sucesso");
 			return ResponseEntity.status(HttpStatus.OK).body(sra);
 		}

@@ -39,6 +39,12 @@ public class Andar {
 	@OneToMany(mappedBy = "andares")
 	private List<Loja> lojas = new ArrayList<Loja>();
 
+	public void addLoja(Loja aLoja) {
+
+		lojas.add(aLoja);
+
+	}
+
 //	---------------Getters e Setters----------------
 
 	public int getNumeroAndar() {

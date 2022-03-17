@@ -3,11 +3,11 @@ package Ficha8.Ficha8_resolucao.utils;
 import Ficha8.Ficha8_resolucao.model.Andar;
 import Ficha8.Ficha8_resolucao.model.CentroComercial;
 
-public class Wrapper {
+public class WrapperAndarCComercial {
 	private CentroComercial centroComercial;
 	private Andar andar;
 
-	public Wrapper(CentroComercial aCentroComercial, Andar aAndar) {
+	public WrapperAndarCComercial(CentroComercial aCentroComercial, Andar aAndar) {
 		centroComercial = aCentroComercial;
 		andar = aAndar;
 	}

@@ -44,6 +44,21 @@ public class CentroComercialService {
 		centroComercialRepository.findAll().forEach(centrosComerciais::add);
 
 		return centrosComerciais;
+
+	}
+
+	public Optional<CentroComercial> getCentroComercial(String aId) {
+		try {
+			Long id_long = parseLong(aId);
+			Optional<CentroComercial> centroComercialOpcional = centroComercialRepository.findById(id_long);
+			if (aId == null || id_long == NaN || centroComercialOpcional.isEmpty()) {
+				return null;
+			}
+			return centroComercialOpcional;
+		} catch (Exception e) {
+			return null;
+		}
+
 	}
 
 	public boolean deleteCentroComercialById(String aId) {
