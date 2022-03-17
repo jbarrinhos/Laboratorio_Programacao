@@ -36,10 +36,10 @@ public class CentroComercialController {
 
 // em contrução
 
-	@GetMapping("users/{id}")
-	public boolean getCComercial(@PathVariable String aId) {
-		return centroComercialService.getCCById(aId);
-	}
+//	@GetMapping("users/{id}")
+//	public boolean getCComercial(@PathVariable String aId) {
+//		return centroComercialService.getCCById(aId);
+//	}
 
 	@PostMapping("/addCentroComercial")
 	public ResponseEntity<SimpleResponse> addCentroComercial(@RequestBody CentroComercial aCentroComercial) {
@@ -69,12 +69,12 @@ public class CentroComercialController {
 	}
 
 	@DeleteMapping("/deleteCentroComercial/{aId}")
-	public boolean deleteEmpresa(@PathVariable String aId) {
+	public boolean deleteCentroComercial(@PathVariable String aId) {
 		return centroComercialService.deleteCentroComercialById(aId);
 	}
 
 	@PutMapping("/updateCComercial")
-	public ResponseEntity<SimpleResponse> updateEmpresa(@RequestBody CentroComercial aCentroComercial) {
+	public ResponseEntity<SimpleResponse> updateCComercial(@RequestBody CentroComercial aCentroComercial) {
 		SimpleResponseCentroComercial srcc = new SimpleResponseCentroComercial();
 
 		if (centroComercialService.updateCComercial(aCentroComercial)) {

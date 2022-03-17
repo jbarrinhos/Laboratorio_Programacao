@@ -11,20 +11,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import Ficha8.Ficha8_resolucao.model.CentroComercial;
-import Ficha8.Ficha8_resolucao.repository.AndarRepository;
 import Ficha8.Ficha8_resolucao.repository.CentroComercialRepository;
 
 @Service
 public class CentroComercialService {
 
 	private final CentroComercialRepository centroComercialRepository;
-	private final AndarRepository andarRepository;
 
 	@Autowired
-	public CentroComercialService(CentroComercialRepository aCentroComercialRepository,
-			AndarRepository aAndarRepository) {
+	public CentroComercialService(CentroComercialRepository aCentroComercialRepository) {
 		centroComercialRepository = aCentroComercialRepository;
-		andarRepository = aAndarRepository;
 
 	}
 
@@ -76,7 +72,6 @@ public class CentroComercialService {
 		if (cCOptional.isEmpty()) {
 			return false;
 		}
-
 		CentroComercial cCToUpdate = cCOptional.get();
 
 		if (aCentroComercial.getNome() != null && !aCentroComercial.getNome().isBlank()) {

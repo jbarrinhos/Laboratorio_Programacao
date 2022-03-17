@@ -29,6 +29,12 @@ public class CentroComercial {
 	@OneToMany(mappedBy = "centroComercial")
 	private List<Andar> andares = new ArrayList<Andar>();
 
+	public void addAndar(Andar aAndar) {
+
+		andares.add(aAndar);
+
+	}
+
 //	Getters e Setters
 
 	public String getNome() {
